@@ -1,0 +1,20 @@
+#pragma once
+
+#include "DynamicObject.h"
+
+class Plane : public DynamicObject {
+public:
+
+    void Draw() const override;
+
+    inline void ChangePlaneY(double dy) { yDirection += dy; }
+	//-------
+	virtual void __fastcall accept(Visitor& v) override
+	{
+		v.log(this);
+	}
+	//----------------
+private:
+
+};
+
